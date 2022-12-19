@@ -85,7 +85,7 @@ function DropDown ({
 export default ({
   //components data
   pic, caption, desc, 
-  //app data mostly uses for DropDown componenet
+  //app data mostly uses for DropDown component
   shelf, arr, getBooks, data, query
 }) => {
   let bookItem, setBookItem;
