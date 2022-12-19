@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import {update} from '../src/BooksAPI'
+import React from 'react'
 
 export default function Section(props) {
   return (
