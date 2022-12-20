@@ -40,15 +40,15 @@ MyReads project creates a bookshelf app that allows you to select and categorize
     │       └── 5.15.3
     │           │── css
     │           │   └── all.min.css
-    │           └── webfonts > "font-awesome fonts"
+    │           └── webfonts
     ├── API
     │   ├── BooksAPI # A JavaScript API for the provided Udacity backend for info about usage check https://github.com/udacity/nd0191-c1-myreads#backend-server
-    │   └── Methods #A fIle includes all required methods to update, get book from Udacity API by BooksAPI
+    │   └── Methods #A fIle includes all required methods to update, get books from Udacity API by BooksAPI
     ├── Screenshots #some screens for project
     ├── App.css #Page Style
     ├── App.js # Main Page Component
     ├── search.js # Search Page Component.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+    └── index.js #includes the app routes
 ```
 
 
