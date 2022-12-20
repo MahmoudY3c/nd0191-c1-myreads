@@ -4,6 +4,7 @@ import React from 'react'
 import BookItem from '../components/book-item'
 import {getAll, search} from './BooksAPI'
 
+//A function to return BookItemComponent depending on book data
 function setArraysData({book, shelf, state, query, updataMethod}) {
   return (
     <BookItem 
@@ -91,6 +92,7 @@ function getAllBooks(state, setState, setOverlay) {
               data: book
             }
           })
+          //Hide (please wait ..) overlay
           if(setOverlay) setOverlay({display: 'none'})
           //mark selected items to section and others to none
           for(let book of results) {
