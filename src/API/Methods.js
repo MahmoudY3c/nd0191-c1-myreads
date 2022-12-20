@@ -121,59 +121,7 @@ function getAllBooks(state, setState, setOverlay) {
           setState(<h1>{err.message}</h1>)
         }
       })();
-      /*//fetch search source
-      search(query).then(results => {
-        if(results.error) {
-          return <h1>Sorry {query} Isn't Exist Try Something Like React</h1>
-        }
-        //check selected book before display
-        return getAll().then(AllBooks => {
-          //extract selected books data
-          existBooksData = AllBooks.map(book => {
-            existBooksId.push(book.id)
-            return {
-              id: book.id,
-              shelf: book.shelf,
-              data: book
-            }
-          })
-          if(setOverlay) setOverlay({display: 'none'})
-          //mark selected items to section and others to none
-          for(let book of results) {
-            //getting book index
-            let index = existBooksId.indexOf(book.id)
-            let data = {
-              book: book, 
-              state: [state, setState],
-              updataMethod: displaySearchResults,
-              query: query
-            }
-            //check if match selected book
-            if(index >= 0) {
-              //setting shelf to selected shelf
-              data.shelf = existBooksData[index].shelf
-              //convert objects to jsx conponent
-              arr.push(setArraysData(data))
-            }
-            else {
-              //mark shelf as none
-              data.shelf = 'none'
-              //convert objects to jsx conponent
-              arr.push(setArraysData(data))
-            }
-          }
-          return arr
-        })
-        .catch(err => setState(<h1>{err.message}</h1>))
-      })
-      .then((items) => {
-        setState(items)
-      })
-      .catch(err => {
-        setState(<h1>{err.message}</h1>)
-      })*/
     } else setState([])
-      
   }
 
 
