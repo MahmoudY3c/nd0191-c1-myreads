@@ -67,7 +67,7 @@ function getAllBooks(state, setState, setOverlay) {
   function displaySearchResults(query, [state, setState], setOverlay) {
     if(query) {
       //trim query
-      query = query.trim().toLowerCase()
+      query = query.trim()
       //componenets holder
       let arr = []
       //selected books holder

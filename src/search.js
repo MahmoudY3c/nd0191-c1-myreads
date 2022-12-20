@@ -4,12 +4,12 @@ import {Link} from 'react-router-dom'
 
 
  function Search() {
- 	let [readItem, setReadItem] = useState(null)
+ 	let [bookItem, setBookItem] = useState(null)
   let [textValue, setTextValue] = useState('')
 
   useEffect(() => {
     let timer = setTimeout(() => {
-      displaySearchResults(textValue, [readItem, setReadItem])
+      displaySearchResults(textValue, [bookItem, setBookItem])
     },700)
     return () => {
       clearTimeout(timer)
@@ -21,13 +21,12 @@ import {Link} from 'react-router-dom'
     //update text value to input value
     setTextValue(value)
     //display loading before display results
-    setReadItem([
+    setBookItem([
       <div style={{padding: '25px', fontSize: '30px'}} key="spinner">
         <i className="fa fa-spinner"></i>
       </div>
     ])
  	}
-  //console.log(readItem)
   let searchPageContainer = (
     <div className='search-page-container App' key="search-main-container">
       <div className='search-container' key="search-container">
@@ -46,7 +45,7 @@ import {Link} from 'react-router-dom'
         </div>
       </div>
       <div className="items-wrapper" key="items-wrapper">
-          {readItem}
+          {bookItem}
       </div>
     </div>
   )
