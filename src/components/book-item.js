@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {update} from '../src/BooksAPI'
+import {update} from '../API/BooksAPI'
 
 function dropDownOptions({
   shelfs, 
@@ -63,6 +63,7 @@ function DropDown ({
       setOverlayState({display: 'flex'})
       //remove dropdown menu of selected book
       setDropdown(null)
+      setChevron('fa fa-chevron-down')
     })
   }
   return (

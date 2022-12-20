@@ -1,5 +1,4 @@
 import React from 'react'
-
 export default function Section(props) {
   return (
   <section className="reading-section" style={(props.style) ? props.style : {}}>

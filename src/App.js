@@ -1,9 +1,8 @@
-
 import './App.css';
 import './lib/font-awesome/5.15.3/css/all.min.css';
 import Section from './components/section'
 import React, {useState, useEffect} from 'react'
-import {getAllBooks} from './src/Methods.js'
+import {getAllBooks} from './API/Methods.js'
 import {Link} from 'react-router-dom'
 
 function App() {

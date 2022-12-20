@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {displaySearchResults} from './src/Methods.js'
+import {displaySearchResults} from './API/Methods.js'
 import {Link} from 'react-router-dom'
 
 
@@ -36,7 +36,7 @@ import {Link} from 'react-router-dom'
         </Link>
         <input 
           type="text" 
-          placeholder="Search Here..." 
+          placeholder="Search by title or author" 
           className="search-field" 
           value={textValue}
           onChange={lookup}

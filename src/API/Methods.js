@@ -8,7 +8,7 @@ function setArraysData({book, shelf, state, query, updataMethod}) {
   return (
     <BookItem 
       //if image thumbnail undefined use image not found link
-      pic={(!book.imageLinks?.smallThumbnail) ? 'http://books.google.com/books/content?id=1yx1tgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api': book.imageLinks.smallThumbnail} 
+      pic={(!book.imageLinks?.thumbnail) ? 'http://books.google.com/books/content?id=1yx1tgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api': book.imageLinks.thumbnail} 
       caption={book.title} 
       desc={book.description}
       //setting selected shelf to true to move check icon on it
@@ -66,13 +66,62 @@ function getAllBooks(state, setState, setOverlay) {
   }
   function displaySearchResults(query, [state, setState], setOverlay) {
     if(query) {
-      //prepare query for search operation
+      //trim query
       query = query.trim().toLowerCase()
       //componenets holder
       let arr = []
       //selected books holder
-      let existBooksId = [], existBooksData = []
-      //fetch searchsource
+      let existBooksId = [], existBooksData = [];
+
+      (async () => {
+        try {
+          //fetch search source
+          let results = await search(query)
+          if(results.error) {
+            return setState(<h1>Sorry {query} Isn't Exist Try Something Like React</h1>)
+          }
+          //get all selected books
+          let AllBooks = await  getAll()
+          //extract selected books data
+          existBooksData = AllBooks.map(book => {
+            existBooksId.push(book.id)
+            return {
+              id: book.id,
+              shelf: book.shelf,
+              data: book
+            }
+          })
+          if(setOverlay) setOverlay({display: 'none'})
+          //mark selected items to section and others to none
+          for(let book of results) {
+            //getting book index
+            let index = existBooksId.indexOf(book.id)
+            let data = {
+              book: book, 
+              state: [state, setState],
+              updataMethod: displaySearchResults,
+              query: query
+            }
+            //check if match selected book
+            if(index >= 0) {
+              //setting shelf to selected shelf
+              data.shelf = existBooksData[index].shelf
+              //convert objects to jsx conponent
+              arr.push(setArraysData(data))
+            }
+            else {
+              //mark shelf as none
+              data.shelf = 'none'
+              //convert objects to jsx conponent
+              arr.push(setArraysData(data))
+            }
+          }
+          return setState(arr)
+        } catch (err) {
+          setState(<h1>{err.message}</h1>)
+        }
+      })();
+      /*//fetch search source
       search(query).then(results => {
         if(results.error) {
           return <h1>Sorry {query} Isn't Exist Try Something Like React</h1>
@@ -122,7 +171,7 @@ function getAllBooks(state, setState, setOverlay) {
       })
       .catch(err => {
         setState(<h1>{err.message}</h1>)
-      })
+      })*/
     } else setState([])
       
   }

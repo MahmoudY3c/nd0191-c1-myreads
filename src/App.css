@@ -10,6 +10,10 @@ header {
   color: #fff;
   padding: 20px;
 }
+a {
+  text-decoration: none;
+  color: initial;
+}
 .App {
   text-align: center;
 }
@@ -41,24 +45,13 @@ header {
   padding: 0 20px;
   font-size: 25px;
 }
-.search-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #000;
-    opacity: 1; /* Firefox */
-}
-
-.search-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #000;
-}
-
-.search-field::-ms-input-placeholder { /* Microsoft Edge */
-    color: #000;
-}
 .search-field {
   background: rgba(255,255,255,0.7);
   color: #000;
   padding: 15px 20px;
   width: 100%;
   border: 1px solid transparent;
+  font-size: 20px;
 }
 .search-field:hover {
   border: 1px solid #999;
