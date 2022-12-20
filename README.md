@@ -1,3 +1,7 @@
+# MyReads Project
+MyReads is a book tracking app created for Udacity's React Fundamentals course.
+this code created from scratch and bootstraped by [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) You can find more information on how to perform common tasks [here](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md).
+
 # Overview
 
 MyReads project creates a bookshelf app that allows you to select and categorize books you have read, currently reading, or want to read
@@ -10,10 +14,6 @@ MyReads project creates a bookshelf app that allows you to select and categorize
 - Each book has a control that lets you select the shelf for that book. When you select a different shelf the book moves there, also the default value for the dropdown menu will be changed to the current shelf of the book where it's in.
 - the project consist of 2 pages (main page, search page) you can move between the pages to search, select and categorize your desired books 
 - you can find the project overview [here](https://youtu.be/HXOaF52t-yI)
-
-# MyReads Project
-MyReads is a book tracking app created for Udacity's React Fundamentals course.
-this code created from scratch and bootstraped by [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) You can find more information on how to perform common tasks [here](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md).
 
 ## Project requirements:
 
