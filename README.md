@@ -74,7 +74,7 @@ MyReads project creates a bookshelf app that allows you to select and categorize
  
 ![Screenshot](./src/screenshots/3.PNG)
 
-# App Functionality
+# App Functions
 
 1. `BooksAPI.js` you can find usage instructions in Udacity `README` you can access it through [this link](https://github.com/udacity/nd0191-c1-myreads#backend-server)
 2. `Methods.js`, `componenets files` you will find some comments that may help you understand how it works 
