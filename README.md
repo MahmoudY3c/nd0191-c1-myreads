@@ -17,7 +17,7 @@ MyReads project creates a bookshelf app that allows you to select and categorize
 
 ## Project requirements:
 
-1. install `git`
+1. install `git` and `nodejs`
 2. open cmd and run `git clone https://github.com/MahmoudY3c/nd0191-c1-myreads.git`
 3. after cloning open the project folder `cd nd0191-c1-myreads`
 4. install all project dependencies with `npm install`
